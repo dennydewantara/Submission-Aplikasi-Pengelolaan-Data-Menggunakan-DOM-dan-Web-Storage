@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: help;
+}
+
+body {
+    font-family: Noto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+    background-color: #FEFDED;
+}
+
+header {    
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #A1C398;
+    z-index: 9999;
+    position: fixed;
+}
+
+#titlePage {    
+    font-family: Noto, sans-serif;
+}
+
+main {
+    width: 100%;
+}
+
+#addBook {
+    margin: 6.3% 0% 0% 0%;
+    background-color: #C6EBC5;
+    gap: 2rem;
+    box-shadow: 0px 5px 20px #e7e6d9;
+    padding: 10% 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    justify-content: center;
+}
+
+#addBook h2 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+#formContent {
+    flex-direction: row;
+    gap: 1rem;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.bookForm-container {
+    width: 100%;
+}
+
+#formContent .bookForm {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 1rem;
+    height: 2rem;
+}
+
+#formContent .bookForm .isiForm {
+    width: 100%;
+    border-style: none;
+    border-radius: 10px;
+    height: 2rem;
+}
+
+.bookFormIsComplete {
+    margin-bottom: 1rem;
+}
+
+.bookFormSubmit {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border-style: none;
+    color: white;
+    background-color: #FA7070;
+}
+
+.bookFormSubmit:disabled {
+    background-color: #422828;
+    color: #6e4b4b;
+}
+
+.bookFormSubmit:disabled:hover {
+    background-color: #422828;    
+    box-shadow: none;
+}
+
+.bookFormSubmit:hover {
+    box-shadow: 0px 5px 20px #4b4b4b52;
+    background-color: #fc7c7c;
+}
+
+#manageFormContainer {
+    padding: 5% 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+#statForm {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+#statForm section {
+    padding: 1rem;    
+    flex-grow: 1;
+}
+
+#statForm .manageForm {
+    flex-direction: column;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.manageForm article.book_item {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 10px;
+}
+
+.manageForm article.book_item .action {
+    gap: 1rem;
+    display: flex;
+    width: 100%;
+}
+
+.manageForm article.book_item div.action button.red {
+    border-radius: 5px;
+    flex-grow: 1;
+    border-style: none;
+    color: white;
+    padding: 0.5rem;
+    background-color: #FA7070;
+}
+
+.manageForm article.book_item div.action button.red:hover {
+    box-shadow: 0px 5px 20px #4b4b4b2d;
+    background-color: #fc7c7c;
+}
+
+.manageForm article.book_item div.action button.green {
+    border-radius: 5px;
+    flex-grow: 1;
+    border-style: none;
+    color: white;
+    padding: 0.5rem;
+    background-color: #A1C398;
+}
+
+.manageForm article.book_item div.action button.green:hover {
+    box-shadow: 0px 5px 20px #4b4b4b2d;
+    background-color: #b9d4b2;
+}
+
+.manageForm article.book_item div.action button.orange {
+    border-radius: 5px;
+    flex-grow: 1;
+    border-style: none;
+    color: white;
+    padding: 0.5rem;
+    background-color: #d38d32;
+}
+
+.manageForm article.book_item div.action button.orange:hover {
+    box-shadow: 0px 5px 20px #4b4b4b2d;
+    background-color: #db9b46;
+}
+
+.manageForm article.book_item h3, p{
+    margin: 0;
+}
+
+.manageForm article.book_item:hover {
+    background-color: #FEFDED;
+    box-shadow: 0px 5px 20px #4b4b4b2d;
+}
+
+#manageFormContainer section#searchForm {
+    width: 100%;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#manageFormContainer section#searchForm h2 {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+form#searchBook {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    height: 2.5rem;
+}
+
+form#searchBook label {
+    flex: 1;
+}
+
+form#searchBook input {
+    flex: 12;
+    height: 100%;    
+    border-radius: 10px;
+    border-style: none;
+    background-color: #eaf7e9;
+}
+
+form#searchBook button {
+    flex: 1;
+    height: 100%;
+    border-radius: 10px;
+    border-style: none;
+    color: white;
+    background-color: #FA7070;
+}
+
+form#searchBook button:hover {
+    box-shadow: 0px 5px 20px #4b4b4b2d;
+    background-color: #fc7c7c;
+}
