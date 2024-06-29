@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const incompleteBookList = document.getElementById('incompleteBookList');
     const completeBookList = document.getElementById('completeBookList');
     const bookFormSubmitButton = document.getElementById('bookFormSubmit');
+    const searchForm = document.getElementById('searchBook');
+    const searchTitleInput = document.getElementById('searchBookTitle');
 
     bookForm.addEventListener('input', validateForm);
 
@@ -127,14 +129,14 @@ document.addEventListener('DOMContentLoaded', function () {
         incompleteBookList.innerHTML = '';
         completeBookList.innerHTML = '';
 
-        for (const book of books) {
+        books.forEach(book => {
             const bookElement = makeBookElement(book);
             if (book.isComplete) {
-                completeBookList.append(bookElement);
+                completeBookList.appendChild(bookElement);
             } else {
-                incompleteBookList.append(bookElement);
+                incompleteBookList.appendChild(bookElement);
             }
-        }
+        });
     }
 
     function clearForm() {
@@ -144,6 +146,35 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('bookFormIsComplete').checked = false;
     }
 
+    searchForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        performSearch();
+    });
+
+    function performSearch() {
+        const searchTerm = searchTitleInput.value.trim().toLowerCase();
+        const filteredBooks = books.filter(book => {
+            const title = book.title.toLowerCase();
+            return title.includes(searchTerm);
+        });
+        renderFilteredBooks(filteredBooks);
+    }
+
+    function renderFilteredBooks(filteredBooks) {
+        incompleteBookList.innerHTML = '';
+        completeBookList.innerHTML = '';
+
+        filteredBooks.forEach(book => {
+            const bookElement = makeBookElement(book);
+            if (book.isComplete) {
+                completeBookList.appendChild(bookElement);
+            } else {
+                incompleteBookList.appendChild(bookElement);
+            }
+        });
+    }
+
     document.addEventListener(RENDER_EVENT, renderBooks);
     loadBooksFromStorage();
+    renderBooks();
 });
