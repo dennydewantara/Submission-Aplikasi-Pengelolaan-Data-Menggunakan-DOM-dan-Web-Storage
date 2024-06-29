@@ -251,8 +251,13 @@ form#searchBook button:hover {
 }
 
 @media screen and (max-width: 1024px){
+    header {
+        z-index: 9999;
+        position: fixed;
+    }
 
     #addBook {
+        margin-top: 8.5%;
         padding: 20% 20%;
     }
 
